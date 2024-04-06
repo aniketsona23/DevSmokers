@@ -1,5 +1,5 @@
 viewStudentApp =[
-    {field:"",header:"",width:20},
+    {field:"stdname",header:"",width:20},
 ]
 
 viewOldAd=[
