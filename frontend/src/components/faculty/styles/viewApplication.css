@@ -1,0 +1,54 @@
+.first-section{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 20px 0px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-panel , .right-panel{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 10px 10px;
+}
+
+.input-set{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.view-application{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.btn-section{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+.view-app-table{
+    margin: 10px 20px;
+}
+
+.input-set{
+    font-size: 20px;
+}
+
+.input-set textarea,input{
+    font-size: 15px;
+}
+
+.btn-section {
+    margin: 10px;
+}

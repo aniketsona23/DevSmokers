@@ -1,6 +1,8 @@
-import MenuPanel from "./MenuPanel";
-import NavBar from "./NavBar";
-import TableData from "./TableData"
+import MenuPanel from "../MenuPanel";
+import NavBar from "../NavBar";
+import TableData from "../TableData"
+import { viewFacultyOptions } from "../../utils/faculty";
+import "./styles/home.css"
 
 function Home(user,role) {
 
@@ -10,7 +12,7 @@ function Home(user,role) {
       <div className="main">
         <NavBar />
         <div className="bottom-layout">
-          <MenuPanel className="menu-panel" role={role}/>
+          <MenuPanel className="menu-panel" cols={viewFacultyOptions}/>
           <div className="dashboard">
             <TableData className="table" role={role} user={user}/>
           </div>

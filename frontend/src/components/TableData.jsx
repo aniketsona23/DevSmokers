@@ -3,7 +3,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 import { InputText } from 'primereact/inputtext';
-import Popup from './DialougeBox';
+// import Popup from './DialougeBox';
 import { Button } from 'primereact/button';
         
 
@@ -13,6 +13,7 @@ const viewStudentAppData = [
 ];
 
 export default function ViewStudentApp() {
+    const [visible, setVisible] = useState(false);
     const [viewStudentApp, setViewStudentApp] = useState([]);
     const [globalFilterValue, setGlobalFilterValue] = useState('');
     const [selectedRows, setSelectedRows] = useState([]);
@@ -28,7 +29,7 @@ export default function ViewStudentApp() {
 
     const renderActionButton = (rowData) => {
         return (
-            <button className="p-button p-button-primary" onClick={()=>{return Popup}}>
+            <button className="p-button p-button-primary" onClick={()=>{setVisible(true)}}>
                 View
             </button>
         );
