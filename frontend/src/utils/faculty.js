@@ -18,3 +18,13 @@ export const viewOldAd = [
   { field: "", header: "", width: 20 },
 ];
 
+export const viewFacultyOptions =[
+    { field: "sop/dop/sat", header: "SOP/DOP/SAT", width: 20},
+    { field: "profile", header: "Profile", width: 20},
+    { field: "students", header: "Students", width: 20},
+    { field: "projects", header: "Projects", width: 20},
+];
+
+module.exports={viewStudentApp, viewOldAd, viewFacultyOptions};
+
+
