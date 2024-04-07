@@ -1,4 +1,4 @@
-const {authenticate} = require("../controllers/controller")
+const {authenticate,getApplications,getProjects} = require("../controllers/controller")
 
 const express = require('express')
 const router = express.Router()
@@ -7,7 +7,6 @@ const router = express.Router()
 router.get("/auth",async(req,res)=>{
     const {userMail} = req.query
     const userRole =  await authenticate(userMail)
-    console.log(userRole    )
     if (userRole){
         res.json({role :userRole}).status(200)
     }
@@ -16,4 +15,13 @@ router.get("/auth",async(req,res)=>{
     }
 })
 
+router.get("/getApp",async(req,res)=>{
+    const applications =await getApplications(req.query)
+    return applications
+})
+
+router.get("/getProj",async(req,res)=>{
+    const projects  =await getProjects(req.query)
+    return projects
+})
 module.exports = router

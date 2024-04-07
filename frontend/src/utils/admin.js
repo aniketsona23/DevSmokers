@@ -1,4 +1,4 @@
-export const viewAdminDashApplications = [
+export const viewAdminApplications = [
   { field: "studentName", header: "Student Name", width: 20 },
   { field: "projectTitle", header: "Project Title", width: 20 },
   { field: "studentId", header: "Student ID", width: 20 },
@@ -8,7 +8,7 @@ export const viewAdminDashApplications = [
   { field: "", header: "", width: 20 },
 ];
 
-export const viewAdminDashProjects = [
+export const viewAdminProjects = [
   { field: "projectName", header: "Project Name", width: 20 },
   { field: "projectId", header: "Project ID", width: 20 },
   { field: "no.ofStudents", header: "No. of Students", width: 20 },
@@ -24,5 +24,3 @@ export const viewAdminOptions = [
     { field: "projects", header: "Projects", width: 20},
     { field: "settings", header: "Settings", width: 20},
 ];
-
-module.exports = {viewAdminDashApplications, viewAdminDashProjects, viewAdminOptions};

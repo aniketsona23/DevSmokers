@@ -25,6 +25,5 @@ export const viewFacultyOptions =[
     { field: "projects", header: "Projects", width: 20},
 ];
 
-module.exports={viewStudentApp, viewOldAd, viewFacultyOptions};
 
 
