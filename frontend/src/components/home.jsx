@@ -2,14 +2,8 @@ import MenuPanel from "./MenuPanel";
 import NavBar from "./NavBar";
 import TableData from "./TableData"
 
-function Home() {
-  columns = [
-    { field: "id", headerName: "ID", width: 40 },
-    { field: "name", headerName: "Name", width: 40 },
-    { field: "", headerName: "ID", width: 40, type: "" },
-  ];
+function Home(user,role) {
 
-  rows=[]
 
   return (
     <>
@@ -18,6 +12,7 @@ function Home() {
         <div className="bottom-layout">
           <MenuPanel />
           <div className="dashboard">
+            <TableData role={role} user={user}/>
           </div>
         </div>
       </div>

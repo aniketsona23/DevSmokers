@@ -2,12 +2,12 @@ import firebaseConfig from "./firebaseconfig"
 import {initializeApp} from "firebase/app"
 import { getAuth,GoogleAuthProvider, signInWithPopup} from "firebase/auth"
 import NavBar from "./NavBar"
-import { useState } from "react"
+// import { useStatee } from "react"
 import Button from '@mui/material/Button'
-import axios from "axios"
+// import axios from "axios"
 
 function Login(){
-    const [userMail,setUser] = useState("");
+    // const [userMail,setUser] = useState("");
 
     const app = initializeApp(firebaseConfig)
     const auth = getAuth(app)
@@ -15,16 +15,16 @@ function Login(){
 
     const authenticate = async (email)=>{
 
-        try{
-            console.log(email)
-            const request = await axios.get("/auth",{
-                params:{
-                    userMail:email
-                }
-            })
-        }catch(err){
-            console.log(err)
-        }
+        // try{
+        //     console.log(email)
+        //     const request = await axios.get("/auth",{
+        //         params:{
+        //             userMail:email
+        //         }
+        //     })
+        // }catch(err){
+        //     console.log(err)
+        // }
         
         // if (request!="Invalid"){
         //     console.log("Valid User")
