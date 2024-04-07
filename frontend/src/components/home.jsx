@@ -10,7 +10,7 @@ function Home(user,role) {
       <div className="main">
         <NavBar />
         <div className="bottom-layout">
-          <MenuPanel />
+          <MenuPanel className="menu-panel"/>
           <div className="dashboard">
             <TableData role={role} user={user}/>
           </div>

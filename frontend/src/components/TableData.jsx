@@ -4,14 +4,15 @@ import {viewAdminApplications,viewAdminProjects} from "../utils/admin"
 import {viewSopDopSat,viewAppliedProject} from "../utils/student"
 
 function TableData({role,user}){
+    var rows = []
     if (role == 'faculty'){
-        columns = viewStudentApp 
+        var columns = viewStudentApp 
     }
     else if (role == 'admin'){
-        columns = viewAdminApplications
+        var columns = viewAdminApplications
     }
     else{
-        columns = viewSopDopSat
+        var columns = viewSopDopSat
     }
     return(
         <DataGrid
