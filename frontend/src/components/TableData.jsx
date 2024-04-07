@@ -3,7 +3,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 import { InputText } from 'primereact/inputtext';
-        
+import Popup from './DialougeBox';
 import { Button } from 'primereact/button';
         
 
@@ -26,10 +26,15 @@ export default function ViewStudentApp() {
         setGlobalFilterValue(e.target.value);
     };
 
+    const renderActionButton = (rowData) => {
+        return (
+            <button className="p-button p-button-primary" onClick={()=>{return Popup}}>
+                View
+            </button>
+        );
+    };
+
     const filterTable = () => {
-        // Implement filtering logic here
-        // You can filter viewStudentAppData based on globalFilterValue
-        // Update the state with the filtered data
         const filteredData = viewStudentAppData.filter((item) => {
             return (
                 item.studentName.toLowerCase().includes(globalFilterValue.toLowerCase()) ||
@@ -42,7 +47,9 @@ export default function ViewStudentApp() {
         });
         setViewStudentApp(filteredData);
     };
-
+    const val = [{ studentName: 'John Doe', projectTitle: 'Project A', studentId: '001', gpsrn: '1234', date: '2024-04-07', status: 'Pending' },
+    { studentName: 'Jane Smith', projectTitle: 'Project B', studentId: '002', gpsrn: '5678', date: '2024-04-08', status: 'Approved' },
+    { studentName: 'Alice Johnson', projectTitle: 'Project C', studentId: '003', gpsrn: '91011', date: '2024-04-09', status: 'Rejected' }]
     return (
         <div className="card">
             <div className="flex justify-content-between">
@@ -50,7 +57,7 @@ export default function ViewStudentApp() {
                 <Button onClick={filterTable} label='Apply Filter' size='large'/>
             </div>
             <DataTable
-                value={viewStudentApp}
+                value={val}
                 selection={selectedRows}
                 onSelectionChange={(e) => setSelectedRows(e.value)}
                 className="p-datatable-striped"
@@ -67,6 +74,7 @@ export default function ViewStudentApp() {
                 <Column field="date" header="Date" style={{ width: '80px' }} />
                 <Column field="status" header="Status" style={{ width: '100px' }} />
                 <Column style={{ width: '60px' }} />
+                <Column body={renderActionButton} style={{ textAlign: 'center', width: '6em' }} />
             </DataTable>
         </div>
     );
