@@ -1,4 +1,4 @@
-viewSopDopSat = [
+export const viewSopDopSat = [
   { field: "projectName", header: "Project Name", width: 20 },
   { field: "researchArea", header: "Research Area", width: 20 },
   { field: "professor", header: "Professor", width: 20 },
@@ -7,7 +7,7 @@ viewSopDopSat = [
   { field: "", header: "", width: 20 },
 ];
 
-viewAppliedProject = [
+export const viewAppliedProject = [
   { field: "projectName", header: "Project Name", width: 20 },
   { field: "researchArea", header: "Research Area", width: 20 },
   { field: "professor", header: "Professor", width: 20 },
@@ -17,8 +17,10 @@ viewAppliedProject = [
   { field: "", header: "", width: 20 },
 ];
 
-viewStudentOptions =[
+export const viewStudentOptions =[
     { field: "sop/dop/sat", header: "SOP/DOP/SAT", width: 20},
     { field: "profile", header: "Profile", width: 20},
     { field: "projects", header: "Projects", width: 20},
 ];
+
+module.exports = {viewSopDopSat,viewAppliedProject, viewStudentOptions};
