@@ -143,17 +143,52 @@ async function applyApp(fields){
   }
 }
 
-async function changeStatus({projId,studId}){
-  if (projId){
-
-  }else if(studId){
-
+async function changeStatus({ projId, appId, status }) {
+  try {
+      if (projId && status) {
+          const { data, error } = await supabase.from('sop_dop_sat_projects').update({"status": status }).eq('project_id', projId);
+          if (error) {
+              console.error('Error updating status:', error.message);
+              return { success: false, error: error.message };
+          } else {
+              console.log('Status updated successfully for projId:', projId);
+              return { success: true };
+          }
+      } else if (appId && status) {
+          const { data, error } = await supabase.from('student_project_applications').update({"status_application": status }).eq('application_id', appId);
+          if (error) {
+              console.error('Error updating status:', error.message);
+              return { success: false, error: error.message };
+          } else {
+              console.log('Status updated successfully for studentId:', appId);
+              return { success: true };
+          }
+      } else {
+          console.error('Invalid parameters');
+          return { success: false, error: 'Invalid parameters' };
+      }
+  } catch (error) {
+      console.error('Error updating status:', error.message);
+      return { success: false, error: error.message };
   }
 }
 
-async function dropProj({projId}){
-  if(projId){
 
+async function dropProj({ projId }) {
+  try {
+      const { data, error } = await supabase.from('sop_dop_sat_projects').delete().eq('project_id', projId);
+      console.log(projId)
+      if (error) {
+          console.error('Error deleting project:', error.message);
+          return { success: false, error: error.message };
+      } else {
+          console.log('Project deleted successfully:', data);
+          return { success: true };
+      } 
+  } catch (error) {
+      console.error('Error deleting project:', error.message);
+      return { success: false, error: error.message };
   }
 }
-module.exports = { authenticate, getApplications, getProjects ,addProject,applyApp , changeStatus,projId};
+
+module.exports = { authenticate, getApplications, getProjects ,addProject,applyApp , changeStatus,dropProj};
