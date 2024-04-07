@@ -4,8 +4,8 @@ const express = require('express')
 const router = express.Router()
 
 
-router.post("/auth",(req,res)=>{
-    const {userMail} = req.body
+router.get("/auth",(req,res)=>{
+    const {userMail} = req.params
     const userRole =  authenticate(userMail)
     if (userRole){
         res.json({role :userRole}).status(200)
@@ -15,3 +15,4 @@ router.post("/auth",(req,res)=>{
     }
 })
 
+module.exports = router

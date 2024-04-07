@@ -1,6 +1,6 @@
 import MenuPanel from "./MenuPanel";
 import NavBar from "./NavBar";
-import { DataGrid } from "@mui/x-data-grid";
+import TableData from "./TableData"
 
 function Home() {
   columns = [
@@ -18,17 +18,6 @@ function Home() {
         <div className="bottom-layout">
           <MenuPanel />
           <div className="dashboard">
-            <DataGrid
-              rows={rows}
-              columns={columns}
-              initialState={{
-                pagination: {
-                  paginationModel: { page: 0, pageSize: 5 },
-                },
-              }}
-              pageSizeOptions={[5, 10]}
-              checkboxSelection
-            />
           </div>
         </div>
       </div>

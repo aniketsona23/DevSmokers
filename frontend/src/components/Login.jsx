@@ -4,6 +4,7 @@ import { getAuth,GoogleAuthProvider, signInWithPopup} from "firebase/auth"
 import NavBar from "./NavBar"
 import { useState } from "react"
 import Button from '@mui/material/Button'
+import axios from "axios"
 
 function Login(){
     const [userMail,setUser] = useState("");
@@ -12,11 +13,23 @@ function Login(){
     const auth = getAuth(app)
     const provider = new GoogleAuthProvider()
 
+    const authenticate = async (email)=>{
+        const request = await axios.get("/auth",{
+            params:{
+                email:email
+            }
+        })
+        if (request!="Invalid"){
+            console.log("Valid User")
+        }else{
+            console.log("Invalid User")
+        }
+    }
     function signIn(){
         signInWithPopup(auth,provider).then((result)=>{
             // const credential = result.credential
             const user = result.user.email
-            console.log(user)
+            authenticate(user)
             setUser(user)
 
         }).catch((err)=>{
