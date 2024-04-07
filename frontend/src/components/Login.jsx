@@ -14,27 +14,28 @@ function Login(){
     const provider = new GoogleAuthProvider()
 
     const authenticate = async (email)=>{
-        const request = await axios.get("/auth",{
-            params:{
-                email:email
-            }
-        })
-        if (request!="Invalid"){
-            console.log("Valid User")
-        }else{
-            console.log("Invalid User")
-        }
-    }
-    function signIn(){
-        signInWithPopup(auth,provider).then((result)=>{
-            // const credential = result.credential
-            const user = result.user.email
-            authenticate(user)
-            setUser(user)
 
-        }).catch((err)=>{
-            console.log(err.message)
-        })
+        try{
+            console.log(email)
+            const request = await axios.get("/auth",{
+                params:{
+                    userMail:email
+                }
+            })
+        }catch(err){
+            console.log(err)
+        }
+        
+        // if (request!="Invalid"){
+        //     console.log("Valid User")
+        // }else{
+        //     console.log("Invalid User")
+        // }
+    }
+    const signIn =  async ()=>{
+        const result = await signInWithPopup(auth,provider)
+        const user  = result.user.email
+        await authenticate(user)
     }
     
 

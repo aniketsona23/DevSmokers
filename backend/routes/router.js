@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 router.get("/auth",(req,res)=>{
-    const {userMail} = req.params
+    const {userMail} = req.query
     const userRole =  authenticate(userMail)
     if (userRole){
         res.json({role :userRole}).status(200)
