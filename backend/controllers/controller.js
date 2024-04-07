@@ -29,18 +29,85 @@ async function authenticate(email) {
 
 async function getApplications({studId,projId}){
   if (studId){
-    
-  }else if(projId){
+    const { data: userData, error: userError } = await supabase
+    .from("student_project_applications")
+    .select("*")
+    .eq("student_id", studId);
+    console.log(studId, projId)
+    if (userError && userError.code!== "PGRST116") {
+    console.log(userError);
+    return "error"
+  }
 
-  }else{
+  if (!userData) {
+    return "Invalid"
+  }
+  console.log(userData)
+  //const {  } = userData;
+
+  return userData;
+    
+  }
+
+  else if(projId){
+    const { data: userData, error: userError } = await supabase
+    .from("sop_dop_sat_projects")
+    .select("*")
+    .eq("project_id", projId);
+
+    if (userError && userError.code!== "PGRST116") {
+    console.log(userError);
+    return "error"
+  }
+
+  if (!userData) {
+    return "Invalid"
+  }
+  console.log(userData)
+  //const {  } = userData;
+
+  return userData;
+
+  }
+  else
+  {
+    const { data: userData, error: userError } = await supabase
+    .from("sop_dop_projects")
+    .select("*")
+    if (userError && userError.code!== "PGRST116") {
+      console.log(userError);
+      return "error"
+    }
+    if (!userData) {
+      return "Invalid"
+    }
+    console.log(userData)
+    //const {  } = userData;
+  
+    return userData;
 
   }
 }
 
 async function getProjects({facultyId}){
-  if (facultyId){
-    
+  //console.log(facultyId)
+  const { data: userData, error: userError } = await supabase
+    .from("sop_dop_sat_projects")
+    .select("*")
+    .eq("faculty_id", facultyId);
+
+    if (userError && userError.code!== "PGRST116") {
+    console.log(userError);
+    return "error"
   }
+
+  if (!userData) {
+    return "Invalid"
+  }
+  console.log(userData)
+  //const {  } = userData;
+
+  return userData;
 }
 
 

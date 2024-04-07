@@ -17,6 +17,7 @@ router.get("/auth",async(req,res)=>{
 
 router.get("/getApp",async(req,res)=>{
     const applications =await getApplications(req.query)
+    console.log(req.query)
     return applications
 })
 
