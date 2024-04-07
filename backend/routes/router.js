@@ -24,4 +24,12 @@ router.get("/getProj",async(req,res)=>{
     const projects  =await getProjects(req.query)
     return projects
 })
+
+router.post('/newProj',async(req,res)=>{
+    
+})
+
+router.post('/newApp',async(req,res)=>{
+
+})
 module.exports = router
