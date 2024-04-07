@@ -1,8 +1,8 @@
 const {createClient} = require("@supabase/supabase-js")
-
+const key= process.env.API_KEY
 const supabase = createClient(
   "https://arnpqxrwnkqpibcwtcjz.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFybnBxeHJ3bmtxcGliY3d0Y2p6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTEwNTE4ODMsImV4cCI6MjAyNjYyNzg4M30.7sfgVgUPrOI1qe_kPMUNoMKZuaCmb_HBG3FMqVImw8U"
+  key
 );
 //const users = {"aniket.sonawane1734@gmail.com":"student","f20220031@goa.bits-pilani.ac.in":"faculty","f20221185@goa.bits-pilani.ac.in":"admin"}
 async function authenticate(email) {
