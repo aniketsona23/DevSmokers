@@ -1,4 +1,4 @@
-const { authenticate, getApplications, getProjects ,addProject,applyApp} = require("../controllers/controller")
+const { authenticate, getApplications, getProjects ,addProject,applyApp , dropProject,changeStatus} = require("../controllers/controller")
 
 const express = require('express')
 const router = express.Router()
@@ -28,14 +28,23 @@ router.get("/getProj",async(req,res)=>{
 
 router.post('/newProj',async(req,res)=>{
     const status = await addProject(req.query)
-    if (status){
+    if (status.success){
+        res.status(200)
     }
 })
 
 router.post('/newApp',async(req,res)=>{
     const status = await applyApp(req.query)
-    if (status){
-
+    if (status.success){
+        res.status(200)
     }
+})
+
+router.patch("/status",async(req,res)=>{
+    const statu = await changeStatus(req.query)
+})
+
+router.delete("/dropProj",async(req,res)=>{
+    const statu = await dropProject(req.query)
 })
 module.exports = router

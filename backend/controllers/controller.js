@@ -143,5 +143,17 @@ async function applyApp(fields){
   }
 }
 
+async function changeStatus({projId,studId}){
+  if (projId){
 
-module.exports = { authenticate, getApplications, getProjects ,addProject,applyApp};
+  }else if(studId){
+
+  }
+}
+
+async function dropProj({projId}){
+  if(projId){
+
+  }
+}
+module.exports = { authenticate, getApplications, getProjects ,addProject,applyApp , changeStatus,projId};
