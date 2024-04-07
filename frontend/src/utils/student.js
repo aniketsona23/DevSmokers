@@ -17,4 +17,4 @@ viewAppliedProject=[
     {field:"",header:"",width:20},
 ]
 
-export {viewSopDopSat,viewAppliedProject}
+module.exports = {viewSopDopSat,viewAppliedProject}

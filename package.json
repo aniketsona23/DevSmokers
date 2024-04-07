@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@mui/icons-material": "^5.15.15",
     "@supabase/supabase-js": "^2.42.0"
   }
 }

@@ -18,4 +18,4 @@ viewAdminProjects = [
   { field: "", header: "", width: 20 },
 ];
 
-export {viewAdminApplications,viewAdminProjects}
+module.exports={viewAdminApplications,viewAdminProjects}

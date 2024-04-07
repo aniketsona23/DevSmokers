@@ -27,3 +27,17 @@ nav{
   align-items: flex-start;
   width: 100%;
 }
+
+/* Home Page */
+
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bottom-layout{
+  display: flex;
+  width: 100%;
+}
+
