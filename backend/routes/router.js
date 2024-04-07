@@ -29,7 +29,6 @@ router.get("/getProj",async(req,res)=>{
 router.post('/newProj',async(req,res)=>{
     const status = await addProject(req.query)
     if (status){
-        
     }
 })
 

@@ -98,13 +98,50 @@ async function getProjects({ facultyId }) {
   return userData;
 }
 
-async function addProject(fields){
-
-
+async function addProject(fields) {
+  try {
+      const { project_id, gpsrn, project_title, project_description, date, research_areas, status, max_students, faculty_id } = fields;
+      const { data, error } = await supabase.from('sop_dop_sat_projects').insert([
+          { project_id, gpsrn, project_title, project_description, date, research_areas, status, max_students, faculty_id }
+      ]);
+      //console.log(fields)
+      if (error) {
+          console.error('Error inserting data:', error);
+          return { success: false, error: error.message };
+      } else {
+          console.log('Data inserted successfully:', data);
+          return { success: true };
+      }
+  } catch (error) {
+      console.error('Error inserting data:', error);
+      return { success: false, error: error.message };
+  }
 }
+
 
 async function applyApp(fields){
-
+  try {
+      const { application_id, student_id, project_id, gpsrn, comments, justification, faculty_comment, application_date, status_application, project_title } = fields;
+      // Ensure the status value is one of the allowed enum values
+      if (!['accepted', 'rejected', 'pending'].includes(status_application)) {
+          throw new Error(`Invalid status value: ${status_application}`);
+      }
+      const { data, error } = await supabase.from('student_project_applications').insert([
+            { application_id, student_id, project_id, gpsrn, comments, justification, faculty_comment, application_date, status_application, project_title }
+      ]);
+      console.log(fields)
+      if (error) {
+          console.error('Error inserting data:', error);
+          return { success: false, error: error.message };
+      } else {  
+          console.log('Data inserted successfully:', data);
+          return { success: true };
+      }
+  } catch (error) {
+      console.error('Error inserting data:', error);
+      return { success: false, error: error.message };
+  }
 }
+
 
 module.exports = { authenticate, getApplications, getProjects ,addProject,applyApp};
