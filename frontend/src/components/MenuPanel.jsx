@@ -1,5 +1,11 @@
 function MenuPanel(){
-    return
+    return(
+        <>
+            <div className="options">
+                
+            </div>
+        </>
+    )
 }
 
 export default MenuPanel
