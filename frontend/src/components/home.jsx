@@ -12,7 +12,7 @@ function Home(user,role) {
         <div className="bottom-layout">
           <MenuPanel className="menu-panel"/>
           <div className="dashboard">
-            <TableData role={role} user={user}/>
+            <TableData className="table" role={role} user={user}/>
           </div>
         </div>
       </div>
