@@ -6,6 +6,8 @@ viewStudentApp =[
     {field:"date",header:"Date",width:20},
     {field:"status",header:"Status",width:20},
     {field:"",header:"",width:20},
+
+
 ]
 
 viewOldAd=[
@@ -16,6 +18,8 @@ viewOldAd=[
     {field:"date",header:"Date",width:20},
     {field:"status",header:"Status",width:20},
     {field:"",header:"",width:20},
+
+
 ]
 
 export {viewStudentApp,viewOldAd}
