@@ -4,24 +4,15 @@ import { Column } from 'primereact/column';
 
 // import Popup from './DialougeBox';
 import { Button } from 'primereact/button';
-import axios from 'axios'
+import axios, { Axios } from 'axios'
 
 // Sample data for  table
 const viewStudentAppData = [
 ];
 
 export default function ViewStudentApp() {
-    const [visible, setVisible] = useState(false);
-    const [viewStudentApp, setViewStudentApp] = useState([]);
     const [selectedRows, setSelectedRows] = useState([]);
-    const [data,setData] = useState([])
-
-    
-    useEffect(async () => {
-        const reques = await axios.get()
-        setViewStudentApp(viewStudentAppData);
-    }, []);
-
+    const [url,setUrl] = useState("");
 
     const renderActionButton = (rowData) => {
         return (
@@ -30,7 +21,7 @@ export default function ViewStudentApp() {
             </button>
         );
     };
-
+    
     const val = [{ studentName: 'John Doe', projectTitle: 'Project A', studentId: '001', gpsrn: '1234', date: '2024-04-07', status: 'Pending' },
     { studentName: 'Jane Smith', projectTitle: 'Project B', studentId: '002', gpsrn: '5678', date: '2024-04-08', status: 'Approved' },
     { studentName: 'Alice Johnson', projectTitle: 'Project C', studentId: '003', gpsrn: '91011', date: '2024-04-09', status: 'Rejected' }]

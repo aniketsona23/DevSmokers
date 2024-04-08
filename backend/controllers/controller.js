@@ -22,13 +22,12 @@ async function authenticate(email) {
   return user_role;
 }
 
-async function getApplications({ studId, projId }) {
+async function getApplications({ studMail, projId }) {
   if (studId) {
     const { data: userData, error: userError } = await supabase
       .from("student_project_applications")
       .select("*")
-      .eq("student_id", studId);
-    console.log(studId, projId);
+      .eq("user_email_id", studMail);
     if (userError && userError.code !== "PGRST116") {
       console.log(userError);
       return "error";
@@ -78,10 +77,14 @@ async function getApplications({ studId, projId }) {
 
 async function getProjects({ facultyId }) {
   //console.log(facultyId)
-  const { data: userData, error: userError } = await supabase
-    .from("sop_dop_sat_projects")
-    .select("*")
-    .eq("faculty_id", facultyId);
+  if (facultyId){
+    const { data: userData, error: userError } = await supabase
+      .from("sop_dop_sat_projects")
+      .select("*")
+      .eq("faculty_id", facultyId);
+  }else{
+    const {data:userData, error :userError} = await supabase.from("sop_dop_sat_projects").select("*")
+  }
 
   if (userError && userError.code !== "PGRST116") {
     console.log(userError);
