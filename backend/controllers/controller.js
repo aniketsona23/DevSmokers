@@ -7,9 +7,9 @@ async function authenticate(email) {
   const { data: userData, error: userError } = await supabase
     .from("users_details")
     .select("user_role")
-    .eq("users_email_id", email)
+    .eq("users_email_id", email)  
     .single();
-
+  
   if (userError && userError.code !== "PGRST116") {
     console.log(userError);
     return "error";
@@ -19,7 +19,6 @@ async function authenticate(email) {
     return "Invalid";
   }
   const { user_role } = userData;
-
   return user_role;
 }
 

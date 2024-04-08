@@ -17,20 +17,22 @@
 
             try{
                 console.log(email)
-                const request = await axios.get("https://localhost:3010/auth",{
+                const request = await axios.get("/auth",{
                     params:{
-                        userMail:email
+                        email:email
                     }
                 })
+
+                if (request.data.role!="Invalid"){
+                    console.log("Valid User")
+                }else{
+                    console.log("Invalid User")
+                }
             }catch(err){
                 console.log(err)
             }
             
-            // if (request!="Invalid"){
-            //     console.log("Valid User")
-            // }else{
-            //     console.log("Invalid User")
-            // }
+            
         }
         const signIn =  async ()=>{
             const result = await signInWithPopup(auth,provider)
