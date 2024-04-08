@@ -4,7 +4,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get("/",(req,res)=>{
-    res.send("Hello")
+    res.send("This is the Backend of website")
 })
 
 router.get("/auth",async(req,res)=>{
