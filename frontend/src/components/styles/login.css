@@ -1,0 +1,12 @@
+.login-page{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.layout{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

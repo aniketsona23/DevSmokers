@@ -2,6 +2,7 @@
     import {initializeApp} from "firebase/app"
     import { getAuth,GoogleAuthProvider, signInWithPopup} from "firebase/auth"
     import NavBar from "./NavBar"
+    import "./styles/login.css"
     // import { useStatee } from "react"
     import Button from '@mui/material/Button'
     import axios from "axios"
@@ -42,12 +43,12 @@
         
 
         return(
-            <>
+            <div className="login-page">
                 <NavBar />
                 <div className="layout">
                     <Button variant="contained" size="large" onClick={signIn}> Sign In with Google</Button>
                 </div>
-            </>
+            </div>
         )
     }
 

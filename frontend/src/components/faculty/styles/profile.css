@@ -1,0 +1,32 @@
+.profLayout{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+}
+
+.upper{
+    width: 100%;
+    display: flex;
+}
+
+.left-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.right-panel{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.input-set{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
