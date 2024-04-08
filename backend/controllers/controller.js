@@ -156,4 +156,4 @@ async function dropProj({projId}){
 
   }
 }
-module.exports = { authenticate, getApplications, getProjects ,addProject,applyApp , changeStatus,projId};
+module.exports = { authenticate, getApplications, getProjects ,addProject,applyApp , changeStatus,dropProj};
