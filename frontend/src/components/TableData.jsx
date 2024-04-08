@@ -4,7 +4,7 @@ import { Column } from 'primereact/column';
 
 // import Popup from './DialougeBox';
 import { Button } from 'primereact/button';
-        
+import axios from 'axios'
 
 // Sample data for  table
 const viewStudentAppData = [
@@ -14,8 +14,11 @@ export default function ViewStudentApp() {
     const [visible, setVisible] = useState(false);
     const [viewStudentApp, setViewStudentApp] = useState([]);
     const [selectedRows, setSelectedRows] = useState([]);
+    const [data,setData] = useState([])
 
-    useEffect(() => {
+    
+    useEffect(async () => {
+        const reques = await axios.get()
         setViewStudentApp(viewStudentAppData);
     }, []);
 
