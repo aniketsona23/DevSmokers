@@ -18,7 +18,7 @@
 
             try{
                 console.log(email)
-                const request = await axios.get("/auth",{
+                const request = await axios.get("/api/auth",{
                     params:{
                         email:email
                     }

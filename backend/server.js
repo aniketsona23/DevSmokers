@@ -8,7 +8,7 @@ const app = express()
 
 
 app.use(cors());
-app.use("/",router)
+app.use("/api",router)
 
 app.listen(port,()=>{
     console.log(`[+] Server Listening on ${port}`)

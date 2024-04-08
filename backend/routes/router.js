@@ -6,6 +6,7 @@ const router = express.Router()
 router.get("/",(req,res)=>{
     res.send("Hello")
 })
+
 router.get("/auth",async(req,res)=>{
     const {email} = req.query
     console.log(email)
