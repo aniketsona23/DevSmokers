@@ -8,17 +8,16 @@ import "./styles/home.css"
 
 function Home(user,role) {
     if (role == "student"){
-        cols = viewStudentOptions
+        var cols = viewStudentOptions
     }
     else if( role == "faculty"){
-        cols = viewFacultyOptions
+        var cols = viewFacultyOptions
     }
     else{
-        cols = viewAdminOptions
+        var cols = viewAdminOptions
     }
 
   return (
-    <>
       <div className="main">
         <NavBar />
         <div className="bottom-layout">
@@ -28,7 +27,6 @@ function Home(user,role) {
           </div>
         </div>
       </div>
-    </>
   );
 }
 
