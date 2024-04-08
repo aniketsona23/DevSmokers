@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@mui/icons-material": "^5.15.15",
-    "@supabase/supabase-js": "^2.42.0"
+    "@supabase/supabase-js": "^2.42.0",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.6.2"
   }
 }

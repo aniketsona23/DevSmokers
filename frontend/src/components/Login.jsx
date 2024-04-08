@@ -32,8 +32,6 @@
             }catch(err){
                 console.log(err)
             }
-            
-            
         }
         const signIn =  async ()=>{
             const result = await signInWithPopup(auth,provider)

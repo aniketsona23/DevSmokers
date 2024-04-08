@@ -22,12 +22,12 @@ router.get("/auth",async(req,res)=>{
 router.get("/getApp",async(req,res)=>{
     const applications =await getApplications(req.query)
     console.log(req.query)
-    return applications
+    res.send(applications)
 })
 
 router.get("/getProj",async(req,res)=>{
     const projects  =await getProjects(req.query)
-    return projects
+    res.send(projects)
 })
 
 router.post('/newProj',async(req,res)=>{
@@ -46,9 +46,12 @@ router.post('/newApp',async(req,res)=>{
 
 router.patch("/status",async(req,res)=>{
     const statu = await changeStatus(req.query)
+    res.send(statu)
 })
 
 router.delete("/dropProj",async(req,res)=>{
     const statu = await dropProj(req.query)
+    res.send(statu)
+
 })
 module.exports = router
